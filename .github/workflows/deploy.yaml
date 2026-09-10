@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: checkout code
@@ -30,6 +30,6 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
 
           script: |
-            sudo cp /tmp/website/index.html /var/www/html/index.html
-            sudo cp /tmp/website/style.css /var/www/html/style.css
+            sudo cp /root/github-actions-static-site/index.html /var/www/html/index.html 
+            sudo cp /root/github-actions-static-site/style.css /var/www/html/style.css
             sudo systemctl reload nginx
