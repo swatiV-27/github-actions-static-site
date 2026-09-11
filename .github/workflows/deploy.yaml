@@ -22,8 +22,6 @@ jobs:
           script: |
             cd /root/github-actions-static-site
             git pull origin main
-
-          script: |
             sudo cp /root/github-actions-static-site/index.html /var/www/html/index.html 
             sudo cp /root/github-actions-static-site/style.css /var/www/html/style.css
             sudo systemctl reload nginx
